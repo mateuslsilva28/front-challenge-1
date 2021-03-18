@@ -1,0 +1,236 @@
+/*CONFIGURAÇÕES PADRÕES*/
+
+body{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: #F2F6FA;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Montserrat', sans-serif;
+}
+
+/*Container*/
+
+#container{
+    display: flex;
+    width: 85%;
+    height: 85%;
+    background-color: #FFF;
+    box-shadow:0px 4px 5px #ffc3c4;
+}
+
+#container form {
+    width: 70%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items: center;
+}
+
+/*Title*/
+
+form h1, form p{text-align: center;}
+
+form h1{
+    color: #FF171B;
+    font-weight: 700;
+    font-size: 2em;
+}
+
+/*Icons*/
+
+#icons{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: -10px 0 -5px 0;
+}
+
+i{
+    width: 16px;
+    height: 16px;
+    border: 1px solid #05013b;
+    border-radius: 50px;
+    padding: 7px;
+    margin: 0 5px;
+    text-align: center;
+    cursor: pointer;
+}
+
+i:hover{
+    -webkit-animation: icones 600ms alternate infinite ease;
+    -moz-animation: icones 600ms alternate infinite ease;
+}
+
+i:first-of-type:hover{
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-image: url("assets-desafio-codesigners/google.png");
+    background-size: cover;
+    padding: 0;
+    border: none;
+    transform: scale(1.2);
+    -webkit-animation: google 600ms alternate infinite ease;
+    -moz-animation: google 600ms alternate infinite ease;
+}
+
+i:nth-of-type(3):hover{
+    background-color: #1DA1F2;
+    color: white;
+    transition: all 0.5s;
+}
+
+i:nth-of-type(2):hover, i:nth-of-type(4):hover{
+    background-color: #4267db;
+    color: white;
+    transition: all 0.5s linear;
+}
+
+@-webkit-keyframes icones{from {-webkit-transform: scale((1));}to {-webkit-transform: scale(1.2);}}
+@-moz-keyframes icones{from {-webkit-transform: scale((1));}to {-webkit-transform: scale(1.2);}}
+@-webkit-keyframes google{from {-webkit-transform: scale((1.1));}to {-webkit-transform: scale(1.4);}}
+@-moz-keyframes google{from {-webkit-transform: scale((1.1));}to {-webkit-transform: scale(1.4);}}
+
+
+/*Input*/
+
+form input{
+    width: 380px;
+    padding: 15px;
+    border: 1px solid #ACC9E5;
+    margin: 5px;
+    background-color: #F2F6FA;
+    border-radius: 8px;
+    color: #C3D4E5;
+    outline: none;
+    max-width: 380px;
+}
+
+form input:focus{
+    border: 1px solid #FF171B;
+}
+
+::-webkit-input-placeholder {color: #C3D4E5;}
+
+/*Checkbox*/
+
+#check{
+    width: 380px;
+    margin: 15px 0 30px 0;
+}
+
+#checkbox {display: none;}
+.checkbox-label{
+    position: relative;
+    cursor:pointer;
+    left: 18px;
+    top: 10px;
+}
+.checkbox-label::before{
+    position: absolute;
+    left: -36px;
+    top: -3px;
+    content: "\2713";
+    display: block;
+    height: 20px;
+    width: 20px;
+    background-color: #fff;
+    color: #fff;
+    text-align: center;
+    border: 1px solid #c1c1c1;
+    border-radius: 4px;
+    transition: all 0.3s ease-in-out;
+}
+
+#checkbox:checked + .checkbox-label::before{background-color: #FF171B;}
+
+span{color: #FF171B;}
+
+/*Botões Sign Up e Sign In*/
+
+#buttons{
+    display: flex;
+    justify-content: space-between;
+    width: 410px;
+}
+
+button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 195px;
+    height: 35px;
+    padding: 25px;
+    border-radius: 8px;
+    outline: none;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+button:first-of-type{
+    border: none;
+    background-color: #FF171B;
+    color: #FFF;
+    transition: all 0.2s ease-in-out;
+}
+
+button:first-of-type:hover{
+    border: 1px solid #FF171B;
+    background-color: #FFF;
+    color: #FF171B;
+    transition: all 0.2s ease-in-out;
+}
+
+button:last-of-type{
+    border: 1px solid #FF171B;
+    background-color: #FFF;
+    color: #FF171B;
+    transition: all 0.2s ease-in-out;
+}
+
+button:last-of-type:hover{
+    border: none;
+    background-color: #FF171B;
+    color: #FFF;
+    transition: all 0.2s ease-in-out;
+}
+
+/*Desktop*/
+@media (min-width:768px){
+    /*Picture*/
+    #container #capa{
+        width: 30%;
+        height: 100%;
+    }
+}
+
+/*Mobile*/
+@media (max-width:767px){
+    #container{
+        justify-content: center;
+    }
+
+    #container form{width: 90%;}
+
+    form input {width: 90%;}
+    
+    #check {
+        width: 90%;
+        display: flex;
+        justify-content: center;
+    }
+
+    #buttons {
+        width: 90%;
+        justify-content: space-evenly;
+    }
+    #buttons button{margin: 0 5px;}
+
+    #container #capa{display: none;}
+}
